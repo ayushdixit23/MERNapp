@@ -103,6 +103,7 @@ const page = () => {
   const comments = async (postid) => {
     try {
       const token = JSON.parse(Cookies.get("tokens")) || {};
+      if (!message) return;
       const res = await axios.post(
         `${API}/post/comment/${postid}`,
         {
